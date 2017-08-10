@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import ProspectDetailReducer from './ProspectDetailReducer';
 
-export default combineReducers({
+const rootReducer =  combineReducers({
   ProspectDetail: ProspectDetailReducer
 });
+
+export default rootReducer;

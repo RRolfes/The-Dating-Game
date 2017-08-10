@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import {
   AppRegistry,
   StyleSheet,
@@ -91,10 +92,7 @@ const styles = StyleSheet.create({
     // remove width and height to override fixed static size
     width: undefined,
     height: undefined,
-    justifyContent: 'space-between',
-    // borderRadius: 4,
-    // borderWidth: 0.5,
-    // borderColor: 'blue',
+    justifyContent: 'space-between'
   },
   header: {
     marginTop: 200,
@@ -105,9 +103,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textAlign: 'center',
     color: 'white',
-    fontFamily: 'AvenirNext-Medium',
-    // fontWeight: 'bold',
-    // fontStyle: 'italic'
+    fontFamily: 'AvenirNext-Medium'
   },
   secondHeaderText: {
     fontSize: 35,
@@ -124,16 +120,13 @@ const styles = StyleSheet.create({
   },
   instructionsText: {
     fontSize: 16,
-    // textAlign: 'center',
     color: 'white',
     flexWrap: 'wrap',
     width: 300,
-    // fontWeight: 'bold',
-    fontFamily: 'AvenirNext-Medium',
+    fontFamily: 'AvenirNext-Medium'
   },
   instructionsline: {
     flexDirection: 'row',
-    // alignItems: 'center',
     paddingTop: 5,
     paddingBottom: 15,
     paddingRight: 10,
@@ -149,30 +142,17 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     marginRight: 15,
     width: 23,
-    height: 23,
+    height: 23
 
   },
   instructionsNumber: {
     fontSize: 15,
     textAlign: 'center',
     color: '#f0f066',
-    // borderRadius: 7,
-    // borderWidth: 1.5,
-    // borderColor: 'white',
-    // fontWeight: 'bold',
     fontFamily: 'AvenirNext-Medium',
-    // paddingTop: 10,
-    // paddingBottom: 3,
-    // paddingRight: 6,
-    // paddingLeft: 6,
-    // marginTop: 3,
-    // marginRight: 15,
-    // width: 23,
-    // height: 23,
     alignItems: 'center',
     justifyContent: 'center',
-    alignContent: 'center',
-    // alignSelf: 'center',
+    alignContent: 'center'
   },
   next: {
     alignSelf: 'center',
@@ -193,18 +173,12 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignSelf: 'center',
     alignItems: 'center',
-    // paddingTop: 5,
-    // paddingBottom: 30,
     marginBottom:4,
-    // marginTop:4,
     marginRight:2,
     marginLeft:2,
-    // paddingRight: 10,
-    // paddingLeft: 10,
-    // fontWeight: 'bold',
     width: 40,
     height: 40,
     borderRadius: 50,
-    fontFamily: 'AvenirNext-Medium',
+    fontFamily: 'AvenirNext-Medium'
   }
 });
