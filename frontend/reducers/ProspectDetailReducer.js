@@ -1,3 +1,8 @@
 import data from './ProspectDetail.json';
 
-export default () => data;
+module.exports = (state = {}, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
