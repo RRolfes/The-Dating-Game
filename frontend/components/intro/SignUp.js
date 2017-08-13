@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import SafariView from 'react-native-safari-view';
 
-
 export default class SignUp extends Component {
 
   static propTypes = {

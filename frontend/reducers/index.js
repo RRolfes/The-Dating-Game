@@ -1,8 +1,9 @@
 module.exports = (state={}, action) => {
   switch (action.type) {
-    case 'CHANGE_TEXT':
+    case 'SET_CURRENT_USER':
+      console.log(action.user);
       return {
-        text: action.text
+        currentUser: action.user
       };
 
     default:

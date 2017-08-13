@@ -25,7 +25,6 @@ class MatchIndex extends Component {
 
   renderMatches () {
       // let { matches } = this.props.currentUser;
-
       // matches = matches.filter( match => match.user_id === this.props.currentUserId);
 
       return matches.map ( match => (

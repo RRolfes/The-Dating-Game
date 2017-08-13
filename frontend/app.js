@@ -6,6 +6,8 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 import { Tabs } from './config/router';
 import {configureStore} from './store';
+import { connect } from 'react-redux';
+import Main from './components/Main';
 
 export default class App extends Component {
   constructor(props) {
@@ -27,7 +29,7 @@ export default class App extends Component {
     return ( user ?
       <Provider store={store}>
         <View style={{flex: 1}}>
-          <Tabs />
+          <Main user={user}/>
          </View>
        </Provider>
 

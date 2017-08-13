@@ -1,4 +1,4 @@
-export * from './user';
+export * from './userActions';
 
 export const changeText = (text) => {
   return {
