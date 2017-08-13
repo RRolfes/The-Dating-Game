@@ -29,14 +29,18 @@ export default class ChatItem extends Component {
 
 
   render() {
+    console.log(this.props.message.authorId);
     return (
       <View style={styles.container}>
-
-
-          <Text style={styles.name}>
+        <Image
+          style={styles.avatar}
+          source={require("../../../assets/images/girl.jpg")}
+          />
+        <View style={styles.messageContainer}>
+          <Text style={styles.}>
             {this.props.message.text}
           </Text>
-
+        </View>
       </View>
     );
   }
@@ -46,27 +50,17 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 10,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'white'
   },
   avatar: {
-    height:56,
-    width:56,
+    height:26,
+    width:26,
     borderColor: 'white',
     borderWidth:2,
-    borderRadius: 20
+    borderRadius: 10
   },
-  viewcont: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 59,
-    height: 59,
-    borderColor: '#121212',
-    borderWidth: .5,
-    borderRadius: 22,
-    // backgroundColor: '#989898'
-
-  },
-  name: {
+  text: {
     marginLeft: 15,
     fontSize: 15,
     color: '#121212',
