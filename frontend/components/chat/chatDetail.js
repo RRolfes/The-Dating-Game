@@ -29,10 +29,6 @@ class ChatDetail extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-
-        hello
-        </Text>
         {this.renderMessages()}
       </View>
     );
@@ -56,7 +52,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = state => {
   return {
-    text: state.text
+    state
   };
 };
 
