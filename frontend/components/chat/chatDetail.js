@@ -12,8 +12,7 @@ import {
 import {chat} from '../../reducers/chat';
 
 
-
-export default class ChatDetail extends Component {
+class ChatDetail extends Component {
   constructor(props) {
     super(props);
   }
@@ -52,3 +51,11 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
 });
+
+const mapStateToProps = state => {
+  return {
+    text: state.text
+  };
+};
+
+export default connect(mapStateToProps)(ChatDetail);
