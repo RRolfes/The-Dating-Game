@@ -34,7 +34,7 @@ export default class MatchDetail extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.viewcont}>
-          <TouchableOpacity onPress={() => {this.HandleClick()}}>
+          <TouchableOpacity onPress={() => {this.HandleClick();}}>
             <Image
               style={styles.avatar}
               source={{uri: avatar}}

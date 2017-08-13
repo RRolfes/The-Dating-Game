@@ -23,7 +23,7 @@ export default class ChatDetail extends Component {
       <View>
         <View>
           <Image
-            style={styles.icon}
+            style={styles.avatar}
             source={require('../../../assets/images/girl.jpg')}
           />
         </View>
@@ -42,5 +42,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  avatar: {
+    height:56,
+    width:56,
+    borderColor: 'white',
+    borderWidth:2,
+    borderRadius: 20
   },
 });
