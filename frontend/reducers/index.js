@@ -1,13 +1,11 @@
 import { combineReducers } from 'redux';
 
-import SessionReducer from './session_reducer';
-import CitiesReducer from './cities_reducer';
-import EventsReducer from './events_reducer'
+import SessionReducer from './sessionReducer';
 
 
-const rootReducer = combineReducers({
+const indexReducer = combineReducers({
   session: SessionReducer
 
 });
 
-export default rootReducer;
+export default indexReducer;

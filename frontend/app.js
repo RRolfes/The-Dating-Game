@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
 import { Tabs } from './config/router';
-import {configureStore} from './store';
+import {configureStore} from './store/store';
 
 
 
