@@ -18,7 +18,8 @@ const Chat = StackNavigator ({
 },
 {
   initialRouteName: 'Matches',
-  headerMode: 'screen'
+  headerMode: 'none',
+  headerStyle: {backgroundColor:"red"}
 });
 
 export const Tabs = TabNavigator({
