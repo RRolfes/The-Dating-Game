@@ -11,6 +11,9 @@ import ChatDetail from '../components/chat/chatDetail';
 const Chat = StackNavigator ({
   Matches: {
     screen: MatchIndex,
+    navigationOptions: {
+      header: null
+    }
   },
   ChatDetail: {
     screen: ChatDetail
@@ -18,7 +21,7 @@ const Chat = StackNavigator ({
 },
 {
   initialRouteName: 'Matches',
-  headerMode: 'none',
+  headerMode: 'float',
   headerStyle: {backgroundColor:"red"}
 });
 

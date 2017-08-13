@@ -9,6 +9,7 @@ import {
   View,
   Image
 } from 'react-native';
+import {chat} from '../../reducers/chat';
 
 
 
@@ -29,7 +30,7 @@ export default class ChatDetail extends Component {
         </View>
         <View>
           <Text style={styles.name}>
-            Grace
+
           </Text>
         </View>
       </View>
