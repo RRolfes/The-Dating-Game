@@ -7,6 +7,8 @@ import reducers from './reducers';
 import { Tabs } from './config/router';
 import {configureStore} from './store';
 
+
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,9 @@ export default class App extends Component {
   render() {
     const store = configureStore();
     const { user } = this.state;
+    window.store = store;
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
     return ( user ?
       <Provider store={store}>
         <View style={{flex: 1}}>
