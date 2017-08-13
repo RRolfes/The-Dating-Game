@@ -10,6 +10,6 @@ module.exports = (app) => {
   app.get('/auth/facebook/callback', facebookMiddleware, oauthCallback);
 
   app.get('/auth/user/:id', UserController.find);
-  app.put('/auth/user/:id', UserController.edit);
+  app.patch('/auth/user/:id', UserController.edit);
   app.delete('/auth/user/:id', UserController.delete);
 };

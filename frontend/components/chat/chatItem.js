@@ -15,37 +15,30 @@ import {
 
 
 
-export default class MatchDetail extends Component {
+export default class ChatItem extends Component {
   constructor(props) {
     super(props);
     this.HandleSend = this.HandleSend.bind(this);
   }
 
   HandleSend() {
-    console.log("hello");
-    this.props.navigator.navigate('ChatDetail', {user_id: this.props.match.id});
+    console.log("XXX");
+    // this.props.navigator.navigate('ChatDetail', {user_id: this.props.match.id});
   }
 
 
 
   render() {
-    const firstName = this.props.match.name.split(" ")[0];
-    const avatar = this.props.match.avatar;
+    console.log("XXXXX5555");
     return (
       <View style={styles.container}>
-        <View style={styles.viewcont}>
-          <TouchableOpacity onPress={() => {this.HandleClick();}}>
-            <Image
-              style={styles.avatar}
-              source={{uri: avatar}}
-              />
-          </TouchableOpacity>
-        </View>
-        <View>
+
+
           <Text style={styles.name}>
-            {firstName}
+          hello
+            {this.props.message.text}
           </Text>
-        </View>
+
       </View>
     );
   }

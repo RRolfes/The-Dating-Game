@@ -21,6 +21,7 @@ class ChatDetail extends Component {
   }
 
   renderMessages () {
+    console.log(chat.id);
       return chat.messages.map ( message => (
         <ChatItem key={message.id} message={message}/>
       ));
@@ -29,7 +30,11 @@ class ChatDetail extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.renderMessages}
+        <Text>
+
+        hello
+        </Text>
+        {this.renderMessages()}
       </View>
     );
   }
