@@ -3,6 +3,7 @@
 // map over all the chats to populate the screen with each ChatDetail
 
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import {
   StyleSheet,
   Text,
