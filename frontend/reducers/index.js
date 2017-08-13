@@ -1,11 +1,13 @@
-module.exports = (state={}, action) => {
-  switch (action.type) {
-    case 'CHANGE_TEXT':
-      return {
-        text: action.text
-      };
+import { combineReducers } from 'redux';
 
-    default:
-      return state;
-  }
-};
+import SessionReducer from './session_reducer';
+import CitiesReducer from './cities_reducer';
+import EventsReducer from './events_reducer'
+
+
+const rootReducer = combineReducers({
+  session: SessionReducer
+
+});
+
+export default rootReducer;
