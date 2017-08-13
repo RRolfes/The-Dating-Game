@@ -29,13 +29,11 @@ export default class ChatItem extends Component {
 
 
   render() {
-    console.log("XXXXX5555");
     return (
       <View style={styles.container}>
 
 
           <Text style={styles.name}>
-          hello
             {this.props.message.text}
           </Text>
 

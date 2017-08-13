@@ -21,7 +21,6 @@ class ChatDetail extends Component {
   }
 
   renderMessages () {
-    console.log(chat.id);
       return chat.messages.map ( message => (
         <ChatItem key={message.id} message={message}/>
       ));
