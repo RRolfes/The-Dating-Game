@@ -20,18 +20,8 @@ class ChatDetail extends Component {
 
   render() {
     return (
-      <View>
-        <View>
-          <Image
-            style={styles.avatar}
-            source={require('../../../assets/images/girl.jpg')}
-          />
-        </View>
-        <View>
-          <Text style={styles.name}>
+      <View style={styles.container}>
 
-          </Text>
-        </View>
       </View>
     );
   }
