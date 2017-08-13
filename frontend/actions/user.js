@@ -12,7 +12,7 @@ export const receiveSingleUser = (currentUser) => ({
 });
 
 export const updateCurrentUser = (user) => dispatch => (
-  UserUtil.updateUser(user).then(
-    currentUser =>
-  )
-)
+  UserUtil.updateUser(user).then(currentUser => (
+    dispatch(receiveSingleUser(currentUser))
+  ))
+);

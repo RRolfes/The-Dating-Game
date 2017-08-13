@@ -4,7 +4,7 @@ import mongoose, { Schema } from 'mongoose';
 export const userSchema = new Schema({
   oauth_id: {
     type: String,
-    unique: true,
+    // unique: true,
     index: true,
   },
   name: String,
