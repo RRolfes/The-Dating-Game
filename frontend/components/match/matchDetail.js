@@ -22,7 +22,6 @@ export default class MatchDetail extends Component {
   }
 
   HandleClick() {
-    console.log("hello");
     this.props.navigator.navigate('ChatDetail', {user_id: this.props.match.id});
   }
 
