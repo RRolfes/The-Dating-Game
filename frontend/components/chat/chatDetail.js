@@ -28,7 +28,7 @@ class ChatDetail extends Component {
   render() {
     return (
       <View style={styles.container}>
-
+        {this.renderMessages}
       </View>
     );
   }
