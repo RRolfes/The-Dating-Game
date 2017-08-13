@@ -24,8 +24,8 @@ class ChatDetail extends Component {
 
       // matches = matches.filter( match => match.user_id === this.props.currentUserId);
 
-      return matches.map ( match => (
-        <MatchDetail key={match.id} match={match} navigator={this.props.navigation}/>
+      return chat.map ( message => (
+        <ChatItem key={message.id} message={message}/>
       ));
     }
 
