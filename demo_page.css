@@ -24,7 +24,6 @@ section {
   font-size: 2.5em;
 }
 
-
 .section-one, .section-two, .section-three {
   text-align: right;
   font-size: .7em;
@@ -47,6 +46,7 @@ img {
   text-align: right;
   display: inline-block;
   margin-bottom: 5%;
+  display: block;
 }
 
 .button {
