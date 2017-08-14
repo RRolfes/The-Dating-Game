@@ -91,13 +91,7 @@ export const Tabs = TabNavigator({
       style: {
         backgroundColor: 'white',
         height: 60,
-        padding: 5,
-        fontSize: 10,
-        textAlign: 'center',
-        color: 'rgb(252, 192, 27)',
-        fontFamily: 'AvenirNext-Regular',
-        fontWeight: "500"
-
+        padding: 5
       }
     }
   });
