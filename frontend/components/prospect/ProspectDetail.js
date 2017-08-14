@@ -36,7 +36,6 @@ export default class ProspectDetails extends Component {
  }
 
   componentDidMount() {
-    console.log("Hello");
     //at this point we need to query the databasy for all the potential
     // matches for this user
     // this.props.fetchProspectMatch();
