@@ -25,6 +25,7 @@ export const userSchema = new Schema({
   interested_in: String,
   liked_users: Array,
   disliked_users: Array,
+  matches: Array
  });
 
 // Export Mongoose model
