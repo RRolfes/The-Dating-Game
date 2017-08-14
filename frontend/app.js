@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import SignUp from './components/intro/SignUp';
+import SignUp from './components/intro/signUp';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
 import { Tabs } from './config/router';
 import {configureStore} from './store';
+import Settings from './components/settings/Settings';
+import Start from './components/start';
 
 export default class App extends Component {
   constructor(props) {
@@ -25,11 +27,11 @@ export default class App extends Component {
     const store = configureStore();
     const { user } = this.state;
     return ( user ?
-      <Provider store={store}>
-        <View style={{flex: 1}}>
-          <Tabs />
-         </View>
-       </Provider>
+      <View style={{flex: 1}}>
+        <Provider store={store}>
+          <Start user={user}/>
+        </Provider>
+      </View>
 
       : <SignUp onLoggedIn={this.onLoggedIn} />
     );

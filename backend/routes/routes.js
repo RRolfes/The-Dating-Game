@@ -8,12 +8,15 @@ import {
 } from '../controllers/auth_controller';
 
 module.exports = (app) => {
+  app.get('/', (req, res) =>
+    res.send('Hello World!')
+  );
   app.get('/auth/facebook', facebookLogin);
   app.get('/auth/facebook/callback', facebookMiddleware, oauthCallback);
 
-  app.get('/auth/user/:id', UserController.find);
-  app.put('/auth/user/:id', UserController.edit);
-  app.delete('/auth/user/:id', UserController.delete);
+  app.get('/user/:id', UserController.find);
+  app.put('/user/:id', UserController.edit);
+  app.delete('/user/:id', UserController.delete);
 
   app.get('/messages', messageController.index);
   app.get('/messages/:id', messageController.show);
