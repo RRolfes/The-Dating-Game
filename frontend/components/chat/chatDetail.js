@@ -13,13 +13,16 @@ import {
 import {chat} from '../../reducers/chat';
 import ChatItem from './chatItem';
 import { GiftedChat } from 'react-native-gifted-chat';
-
+import { sendAMessage, fetchMessages } from '../../actions/messageActions';
 
 class ChatDetail extends Component {
   constructor(props) {
     super(props);
     this.renderMessages = this.renderMessages.bind(this);
     this.state = { messages: []};
+    // this.sendAMessage = this.sendAMessage.bind(this);
+    // this.fetchMessages = this.fetchMessages.bind(this);
+    // console.log(sendMessage);
   }
 
   renderMessages () {
@@ -33,34 +36,24 @@ class ChatDetail extends Component {
       this.setState((previousState) => ({
         messages: GiftedChat.append(previousState.messages, messages)
       }));
-      let body = {
+      let message = {
         user: this.props.user_id,
         messageOriginationTime: Date.now(),
         messageContent: messages[-1]
       };
-      fetch('https://localhost:8081/message', {
-        method: 'POST',
-        json: true,
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: body
-      }), function(error) {
-        return error;
-      };
+      this.sendAMessage(message);
     }
 
-   componentDidMount() {
-      fetch('https://localhost:8081/messsages').then((message) => {
-        this.setState((previousState) => {
-          return {
-            messages: GiftedChat.append(previousState.messages, message),
-          };
-        });
-      }), function(error) {
-        return error;
-      };
-    }
+  //  componentDidMount() {
+  //    this.fetchMessages().then((message) => {
+  //    (message) => {
+  //      this.setState((previousState) => {
+  //        return {
+  //          messages: GiftedChat.append(previousState.messages, message),
+  //        };
+  //      });
+  //    };
+  //   }
 
   render() {
     console.log("XXXXX");

@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { MESSAGES, MESSAGE } from '../api';
+import { MESSAGES, MESSAGE } from '../api/index';
 
 
-exports.fetchMessages = () => {
+export const fetchMessages = () => {
   return function(dispatch) {
     return axios.get(MESSAGES).then((messages) => {
       dispatch(receiveMessages(messages));
@@ -10,10 +10,10 @@ exports.fetchMessages = () => {
   };
 };
 
-exports.sendAMessage = (message) => {
+export const sendAMessage = (message) => {
   return function(dispatch) {
-    return axios.post(MESSAGE, message).then((message) => {
-      dispatch(sendMessage(message));
+    return axios.post(MESSAGE, message).then((msg) => {
+      dispatch(sendMessage(msg));
     });
   };
 };
