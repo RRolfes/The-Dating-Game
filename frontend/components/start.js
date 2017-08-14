@@ -31,10 +31,9 @@ class Start extends Component {
   }
 
   componentWillMount() {
-    console.log("hit");
-    console.log(fetchCurrentUser);
+    console.log("Fetch");
     this.props.dispatch(fetchCurrentUser(this.props.user._id));
-    console.log("shit");
+    console.log("222");
   }
 
   // use local state to update the user in the db. Will need to take the current Users info for other fields

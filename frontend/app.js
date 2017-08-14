@@ -8,7 +8,7 @@ import { Tabs } from './config/router';
 import {configureStore} from './store';
 import Settings from './components/settings/Settings';
 import Start from './components/start';
-import { fetchCurrentUser } from './actions/userActions';
+import { fetchCurrentUser, updateCurrentUser } from './actions/userActions';
 
 export default class App extends Component {
   constructor(props) {
@@ -30,6 +30,7 @@ export default class App extends Component {
     window.store = store;
     window.getState = store.getState;
     window.fetchCurrentUser = fetchCurrentUser();
+    window.updateCurrentUser = updateCurrentUser();
     return ( user ?
       <View style={{flex: 1}}>
         <Provider store={store}>
