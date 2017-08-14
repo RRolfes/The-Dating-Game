@@ -14,14 +14,3 @@ export const setCurrentUser = (user) => {
     user: { user }
   };
 };
-
-// exports.fetchPlant = connectionId => function(dispatch) {
-//   return Keychain.getGenericPassword().then((credentials) => {
-//     return axios.get(PLANT_URL(connectionId), {
-//     }).then((response) => {
-//       dispatch(setPlant(response.data.plant));
-//     }).catch((err) => {
-//       dispatch(addAlert("Plant is hiding"));
-//     });
-//   });
-// };
