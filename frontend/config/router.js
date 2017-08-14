@@ -48,6 +48,7 @@ export const Tabs = TabNavigator({
   Prospects: {
     screen: ProspectDetail,
     navigationOptions: {
+       navBarTintColor: '#e91e63',
       tabBarLabel: 'Prospects',
       tabBarIcon: ({
         tintColor,
@@ -58,6 +59,14 @@ export const Tabs = TabNavigator({
   Settings: {
     screen: Settings,
     navigationOptions: {
+       activeTintColor: '#e91e63',
+      tabBarLabelStyle: {
+        backgroundColor: "white",
+        fontSize: 27,
+        textAlign: 'center',
+        color: 'rgb(252, 192, 27)',
+        fontFamily: 'AvenirNext-Regular',
+        fontWeight: "500"},
       tabBarLabel: 'Settings',
       tabBarIcon: ({ tintColor }) => <Icon name="settings" size={28} color={'rgba(255, 187, 0, 0.7)'}/>
     }
@@ -65,6 +74,7 @@ export const Tabs = TabNavigator({
   Instructions: {
     screen: Instructions,
     navigationOptions: {
+       activeTintColor: '#e91e63',
       tabBarLabel: 'Instructions',
       tabBarIcon: ({ tintColor }) => <Icon name="list" size={28} color={"rgba(255, 187, 0, 0.7)"}/>
     },
@@ -72,9 +82,31 @@ export const Tabs = TabNavigator({
   Matches: {
     screen: Chats,
     navigationOptions: {
+       activeTintColor: 'white',
       tabBarLabel: 'Matches',
       tabBarIcon: ({ tintColor }) => <Icon name="favorite-border" size={28} color={"rgba(255, 187, 0, 0.7)"}/>
-    }
-  }
+  }}
+  }, {
+    tabBarOptions : {
+      style: {
+        backgroundColor: 'white',
+        height: 60,
+        padding: 5,
+        fontSize: 10,
+        textAlign: 'center',
+        color: 'rgb(252, 192, 27)',
+        fontFamily: 'AvenirNext-Regular',
+        fontWeight: "500"
 
-});
+      }
+    }
+  });
+
+Tabs.navigationOptions = {
+  header: {
+    style: {
+      backgroundColor: '#42a5f5',
+      height: 30
+    }
+  },
+};

@@ -50,7 +50,7 @@ class Start extends Component {
     console.log(this.props);
     return (
       <View style={{flex: 1}}>
-        <Tabs />
+        <Tabs navBarTintColor="black"/>
       </View>
     );
   }
