@@ -18,9 +18,9 @@ class Start extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      age: '',
-      age_range_low: '',
-      age_range_high: '',
+      age: null,
+      age_range_low: null,
+      age_range_high: null,
       location: '',
       occupation: '',
       education: '',
@@ -31,10 +31,7 @@ class Start extends Component {
   }
 
   componentWillMount() {
-    console.log("hit");
-    console.log(fetchCurrentUser);
     this.props.dispatch(fetchCurrentUser(this.props.user._id));
-    console.log("shit");
   }
 
   // use local state to update the user in the db. Will need to take the current Users info for other fields

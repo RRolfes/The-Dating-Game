@@ -11,13 +11,12 @@ import {
   ImageBackground
 } from 'react-native';
 
+import { updateCurrentUser } from '../../actions/userActions';
+
 class Settings extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      age: null,
-      age_range_low: null,
-      age_range_high: null,
       location: '',
       occupation: '',
       education: '',
@@ -30,7 +29,8 @@ class Settings extends Component {
 
   // use local state to update the user in the db. Will need to take the current Users info for other fields
   handleSubmit() {
-    const updates = this.state;
+    const userProps = this.state;
+    this.props.dispatch(updateCurrentUser(this.props.currentUser.user._id, userProps));
   }
 
   update(field) {
