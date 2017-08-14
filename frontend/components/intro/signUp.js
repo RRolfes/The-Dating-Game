@@ -48,7 +48,7 @@ export default class SignUp extends Component {
   };
 
   // Handle Login with Facebook button tap
-  loginWithFacebook = () => this.openURL('http://localhost:3000/auth/facebook');
+  loginWithFacebook = () => this.openURL('https://damp-savannah-20880.herokuapp.com/auth/facebook');
 
   // Open URL in a browser
   openURL = (url) => {
