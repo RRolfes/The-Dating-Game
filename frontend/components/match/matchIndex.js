@@ -28,7 +28,7 @@ class MatchIndex extends Component {
       // matches = matches.filter( match => match.user_id === this.props.currentUserId);
 
       return matches.map ( match => (
-        <MatchDetail key={match.id} match={match}/>
+        <MatchDetail key={match.id} match={match} navigator={this.props.navigation}/>
       ));
     }
   render() {
@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // justifyContent: 'space-between',
     paddingTop: 10,
+    backgroundColor: 'white'
   },
   navbar: {
     flexDirection: 'row',

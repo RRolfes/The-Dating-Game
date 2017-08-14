@@ -3,34 +3,33 @@
 // map over all the chats to populate the screen with each ChatDetail
 
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
+import {chat} from '../../reducers/chat';
+import ChatItem from './chatItem';
 
 
-
-export default class ChatDetail extends Component {
+class ChatDetail extends Component {
   constructor(props) {
     super(props);
+    this.renderMessages = this.renderMessages.bind(this);
   }
 
+  renderMessages () {
+      return chat.messages.map ( message => (
+        <ChatItem key={message.id} message={message}/>
+      ));
+    }
 
   render() {
     return (
-      <View>
-        <View>
-          <Image
-            style={styles.icon}
-            source={require('../../../assets/images/girl.jpg')}
-          />
-        </View>
-        <View>
-          <Text style={styles.name}>
-            Grace
-          </Text>
-        </View>
+      <View style={styles.container}>
+        {this.renderMessages()}
       </View>
     );
   }
@@ -40,6 +39,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'white'
+  },
+  avatar: {
+    height:56,
+    width:56,
+    borderColor: 'white',
+    borderWidth:2,
+    borderRadius: 20
   },
 });
+
+const mapStateToProps = state => {
+  return {
+    state
+  };
+};
+
+export default connect(mapStateToProps)(ChatDetail);
