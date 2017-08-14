@@ -41,7 +41,7 @@ class ChatDetail extends Component {
         messageOriginationTime: Date.now(),
         messageContent: messages[-1]
       };
-      this.sendAMessage(message);
+      // this.sendAMessage(message);
     }
 
   //  componentDidMount() {
