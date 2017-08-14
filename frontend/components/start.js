@@ -49,7 +49,7 @@ class Start extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <Tabs />
+        <Tabs navBarTintColor="black"/>
       </View>
     );
   }

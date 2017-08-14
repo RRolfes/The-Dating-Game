@@ -12,25 +12,67 @@ import {
 } from 'react-native';
 import {chat} from '../../reducers/chat';
 import ChatItem from './chatItem';
-
+import { GiftedChat } from 'react-native-gifted-chat';
+import { sendAMessage, fetchMessages } from '../../actions/messageActions';
 
 class ChatDetail extends Component {
   constructor(props) {
     super(props);
     this.renderMessages = this.renderMessages.bind(this);
+    this.state = { messages: []};
+    // this.sendAMessage = this.sendAMessage.bind(this);
+    // this.fetchMessages = this.fetchMessages.bind(this);
+    // console.log(sendMessage);
   }
 
   renderMessages () {
+
       return chat.messages.map ( message => (
         <ChatItem key={message.id} message={message}/>
       ));
     }
 
+    onSend(messages = []) {
+      this.setState((previousState) => ({
+        messages: GiftedChat.append(previousState.messages, messages)
+      }));
+      let message = {
+        user: this.props.user_id,
+        messageOriginationTime: Date.now(),
+        messageContent: messages[-1]
+      };
+      this.sendAMessage(message);
+    }
+
+  //  componentDidMount() {
+  //    this.fetchMessages().then((message) => {
+  //    (message) => {
+  //      this.setState((previousState) => {
+  //        return {
+  //          messages: GiftedChat.append(previousState.messages, message),
+  //        };
+  //      });
+  //    };
+  //   }
+
   render() {
+    console.log("XXXXX");
     return (
-      <View style={styles.container}>
-        {this.renderMessages()}
-      </View>
+
+        <GiftedChat
+          messages={this.state.messages}
+          onSend={(messages) => {
+            this.onSend(messages);
+          }}
+          user={
+            {
+              id: this.props.user_id,
+              name: this.props.name,
+              avatar: this.props.avatar
+            }
+          }
+        />
+
     );
   }
 }
@@ -38,14 +80,14 @@ class ChatDetail extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: 'white'
   },
-  avatar: {
+  messegeBox: {
     height:56,
-    width:56,
-    borderColor: 'white',
+    width:300,
+    borderColor: 'red',
     borderWidth:2,
     borderRadius: 20
   },

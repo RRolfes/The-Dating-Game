@@ -15,6 +15,7 @@ import {
 
 
 
+
 export default class ChatItem extends Component {
   constructor(props) {
     super(props);
