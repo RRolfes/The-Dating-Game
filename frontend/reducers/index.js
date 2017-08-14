@@ -9,9 +9,9 @@ export default combineReducers({
 
 module.exports = (state={}, action) => {
   switch (action.type) {
-    case 'CHANGE_TEXT':
+    case 'SET_CURRENT_USER':
       return {
-        text: action.text
+        currentUser: action.user
       };
 
     default:

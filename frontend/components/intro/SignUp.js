@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import SafariView from 'react-native-safari-view';
 
-
 export default class SignUp extends Component {
 
   static propTypes = {
@@ -41,6 +40,7 @@ export default class SignUp extends Component {
     // Decode the user string and parse it into JSON
     const user = JSON.parse(decodeURI(user_string));
     // Call onLoggedIn function of parent component and pass user object
+    
     this.props.onLoggedIn(user);
     if (Platform.OS === 'ios') {
       SafariView.dismiss();

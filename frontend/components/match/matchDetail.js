@@ -18,9 +18,12 @@ import {
 export default class MatchDetail extends Component {
   constructor(props) {
     super(props);
-
+    this.HandleClick = this.HandleClick.bind(this);
   }
 
+  HandleClick() {
+    this.props.navigator.navigate('ChatDetail', {user_id: this.props.match.id});
+  }
 
 
 
@@ -30,7 +33,7 @@ export default class MatchDetail extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.viewcont}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {this.HandleClick();}}>
             <Image
               style={styles.avatar}
               source={{uri: avatar}}
