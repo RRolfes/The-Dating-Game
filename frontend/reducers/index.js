@@ -1,11 +1,11 @@
-import { combineReducers } from 'redux';
-import UserUpdateReducer from './userUpdateReducer';
-
-
-
-export default combineReducers({
-  userUpdate: UserUpdateReducer,
-});
+// import { combineReducers } from 'redux';
+// import UserUpdateReducer from './userUpdateReducer';
+//
+//
+//
+// export default combineReducers({
+//   userUpdate: UserUpdateReducer,
+// });
 
 module.exports = (state={}, action) => {
   switch (action.type) {

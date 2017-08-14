@@ -11,7 +11,7 @@ import {
   ImageBackground
 } from 'react-native';
 
-import { setCurrentUser } from '../actions/userActions';
+import { setCurrentUser, fetchCurrentUser } from '../actions/userActions';
 import { Tabs } from '../config/router';
 
 class Start extends Component {
@@ -31,7 +31,10 @@ class Start extends Component {
   }
 
   componentWillMount() {
-    this.props.dispatch(setCurrentUser(this.props.user));
+    console.log("hit");
+    console.log(fetchCurrentUser);
+    this.props.dispatch(fetchCurrentUser(this.props.user._id));
+    console.log("shit");
   }
 
   // use local state to update the user in the db. Will need to take the current Users info for other fields
@@ -47,7 +50,6 @@ class Start extends Component {
 
   // cahnge placeholder's with currentUser info
   render() {
-    console.log(this.props);
     return (
       <View style={{flex: 1}}>
         <Tabs />

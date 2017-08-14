@@ -15,9 +15,9 @@ class Settings extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      age: '',
-      age_range_low: '',
-      age_range_high: '',
+      age: null,
+      age_range_low: null,
+      age_range_high: null,
       location: '',
       occupation: '',
       education: '',
@@ -30,7 +30,7 @@ class Settings extends Component {
 
   // use local state to update the user in the db. Will need to take the current Users info for other fields
   handleSubmit() {
-    return this.state;
+    const updates = this.state;
   }
 
   update(field) {
@@ -124,7 +124,7 @@ class Settings extends Component {
                 style={styles.textCont}
                 placeholder="Men, Women, or both"
                 onChangeText={(interested_in) => this.setState({interested_in})}
-                value={this.state.about}
+                value={this.state.interested_in}
                 />
             </View>
           </View>
