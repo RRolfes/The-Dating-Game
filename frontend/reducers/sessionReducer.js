@@ -7,7 +7,7 @@ import {
 import {
   RECEIVE_MESSAGES,
   SEND_MESSAGE
-} from '../actions/message';
+} from '../actions/messageActions';
 
 const nullUser = Object.freeze({
   currentUser: null
