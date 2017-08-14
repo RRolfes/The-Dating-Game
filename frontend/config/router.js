@@ -16,7 +16,18 @@ const Chat = StackNavigator ({
     }
   },
   ChatDetail: {
-    screen: ChatDetail
+    screen: ChatDetail,
+    navigationOptions: {
+   title: 'theDatingGame',
+   headerTitleStyle: {
+      /*  */
+   },
+   headerStyle: {
+      /*  */
+   },
+   headerTintColor: 'black',
+   backgroundColor: "white"
+}
   },
 },
 {
