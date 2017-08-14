@@ -37,7 +37,7 @@ export default class ChatItem extends Component {
           source={require("../../../assets/images/girl.jpg")}
           />
         <View style={styles.messageContainer}>
-          <Text style={styles.}>
+          <Text style={styles.text}>
             {this.props.message.text}
           </Text>
         </View>

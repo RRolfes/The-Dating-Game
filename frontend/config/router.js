@@ -30,6 +30,9 @@ export const Tabs = TabNavigator({
     screen: Settings,
     navigationOptions: {
       tabBarLabel: 'Settings',
+      style: {
+        backgroundColor: 'red'
+      },
       tabBarIcon: ({ tintColor }) => <Icon name="settings" size={28} color={tintColor}/>
     }
   },
