@@ -2,9 +2,11 @@ import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
 
 class Chat extends React.Component {
-  // state = {
-  //   messages: [],
-  // }
+  constructor(props) {
+      super(props);
+
+      this.state = { messages: []};
+    }
 
   componentWillMount() {
 
@@ -18,18 +20,24 @@ class Chat extends React.Component {
       user: this.props.user_id,
       messageOriginationTime: Date.now(),
       messageContent: messages[-1]
-    }.then(
-      fetch({
-        method: 'POST',
-        url: 'localhost:3000/message',
-        json: true,
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: messages[-1]
-      }), function(error) {
-        return error;
+    };
+    fetch('http://localhost:3000/message', {
+      method: 'POST',
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: body
+    }).then((error) => error);
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/messsages').then((message) => {
+      this.setState((previousState) => {
+        return {
+          messages: GiftedChat.append(previousState.messages, message),
+        };
       });
+    }).then((error) => error);
   }
 
   render() {
@@ -50,9 +58,5 @@ class Chat extends React.Component {
     );
   }
 }
-
-Chat.propTypes = {
-
-};
 
 export default Chat;
