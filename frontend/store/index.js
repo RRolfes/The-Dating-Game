@@ -3,7 +3,8 @@ import reducer from '../reducers';
 import thunk from 'redux-thunk';
 
 let defaultState = {
-  text: "Default Text"
+  text: "Default Text",
+  currentUser: null
 };
 
 export const configureStore = (initialState=defaultState) => {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   StyleSheet,
   Text,
@@ -10,8 +11,7 @@ import {
   ImageBackground
 } from 'react-native';
 
-
-export default class UselessTextInput extends Component {
+class Settings extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,6 +26,7 @@ export default class UselessTextInput extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
 
   // use local state to update the user in the db. Will need to take the current Users info for other fields
   handleSubmit() {
@@ -144,3 +145,11 @@ const styles = StyleSheet.create({
     height: 26
   },
 });
+
+const mapStateToProps = ({currentUser}) => {
+  return {
+    currentUser
+  };
+};
+
+export default connect(mapStateToProps)(Settings);

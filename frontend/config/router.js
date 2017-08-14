@@ -8,6 +8,13 @@ import MatchIndex from '../components/match/matchIndex';
 import Settings from '../components/settings/Settings';
 
 export const Tabs = TabNavigator({
+  Prospects: {
+    screen: ProspectDetail,
+    navigationOptions: {
+      tabBarLabel: 'Prospects',
+      tabBarIcon: ({ tintColor }) => <Icon name="sentiment-very-satisfied" size={28} color={tintColor}/>
+  },
+},
   Settings: {
     screen: Settings,
     navigationOptions: {
@@ -20,13 +27,6 @@ export const Tabs = TabNavigator({
     navigationOptions: {
       tabBarLabel: 'Instructions',
       tabBarIcon: ({ tintColor }) => <Icon name="list" size={28} color={tintColor}/>
-    },
-  },
-  Prospects: {
-    screen: ProspectDetail,
-    navigationOptions: {
-      tabBarLabel: 'Prospects',
-      tabBarIcon: ({ tintColor }) => <Icon name="sentiment-very-satisfied" size={28} color={tintColor}/>
     },
   },
   Matches: {
