@@ -1,6 +1,8 @@
 import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
 
+// The open source Gifted Chat npm module was created and developed by Farid Safi
+// https://github.com/FaridSafi/react-native-gifted-chat
 
 class Chat extends React.Component {
   constructor(props) {
